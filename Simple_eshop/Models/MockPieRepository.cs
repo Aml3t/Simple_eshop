@@ -5,6 +5,8 @@ namespace Simple_Eshop.Models
 {
     public class MockPieRepository : IPieRepository
     {
+        private readonly ICategoryRepository _categoryRepository = new MockCategoryRepository();
+
         public IEnumerable<Pie> AllPies =>
             new List<Pie>
             {
@@ -19,9 +21,21 @@ namespace Simple_Eshop.Models
             };
 
 
-        public IEnumerable<Pie> PiesOfTheWeek => throw new NotImplementedException();
+        public IEnumerable<Pie> PiesOfTheWeek
+        {
+            get
+            {
+                return AllPies.Where(p => p.IsPieOfTheWeek = true);
+            }
+        }
+
 
         public Pie? GetPieById(int pieId)
+        {
+            return AllPies.FirstOrDefault(p => p.PieId == pieId);
+        }
+
+        public IEnumerable<Pie> SearchPies(string searchQuery)
         {
             throw new NotImplementedException();
         }
