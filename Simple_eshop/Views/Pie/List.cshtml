@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@model IEnumerable<Simple_Eshop.Models.Pie>
+
+<!DOCTYPE html>
 
 <html>
 <head>
@@ -7,6 +9,10 @@
 </head>
 <body>
     <h1>@ViewBag.CurrentCategory</h1>
+    @foreach (var pie in Model)
+    {
+        
+    }
 </body>
 
 </html>
