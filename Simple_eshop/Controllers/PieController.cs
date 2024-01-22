@@ -14,9 +14,9 @@ namespace Simple_Eshop.Controllers
             _categoryRepository = categoryRepository;
         }
 
-        public IActionResult Action()
+        public IActionResult List()
         {
-
+            return View(_pieRepository.AllPies);
         }
     }
 }
