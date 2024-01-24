@@ -19,5 +19,7 @@ namespace Simple_Eshop.Controllers
             ViewBag.CurrentCategory = "Cheese cakes";
             return View(_pieRepository.AllPies);
         }
+
+
     }
 }
