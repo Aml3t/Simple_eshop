@@ -30,10 +30,7 @@ namespace Simple_Eshop.Models
 
         public Pie? GetPieById(int pieId)
         {
-            get
-            {
-                return _bethanysPieShopDbContext.Pies.FirstOrDefault(p => p.PieId == pieId);
-            }
+            return _bethanysPieShopDbContext.Pies.FirstOrDefault(p => p.PieId == pieId);
         }
     }
 }

@@ -5,8 +5,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 //Registering our Services
 
-builder.Services.AddScoped<ICategoryRepository, MockCategoryRepository>();
-builder.Services.AddScoped<IPieRepository, MockPieRepository>();
+//builder.Services.AddScoped<ICategoryRepository, MockCategoryRepository>();
+//builder.Services.AddScoped<IPieRepository, MockPieRepository>();
+
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<IPieRepository, PieRepository>();
 
 
 builder.Services.AddControllersWithViews();

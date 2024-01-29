@@ -1,4 +1,5 @@
-﻿namespace Simple_Eshop.Models
+﻿
+namespace Simple_Eshop.Models
 {
     public class CategoryRepository : ICategoryRepository
     {
@@ -7,6 +8,14 @@
         public CategoryRepository(BethanysPieShopDbContext bethanysPieShopDbContext)
         {
             _bethanysPieShopDbContext = bethanysPieShopDbContext;
+        }
+
+        public IEnumerable<Category> AllCategories
+        {
+            get
+            {
+                return _bethanysPieShopDbContext.Categories.OrderBy(p=> p.CategoryName);
+            }
         }
     }
 }
