@@ -1,4 +1,7 @@
-﻿namespace Simple_Eshop.Models
+﻿
+using Microsoft.EntityFrameworkCore;
+
+namespace Simple_Eshop.Models
 {
     public class PieRepository : IPieRepository
     {
@@ -7,6 +10,27 @@
         public PieRepository(BethanysPieShopDbContext bethanysPieShopDbContext)
         {
             _bethanysPieShopDbContext = bethanysPieShopDbContext;
+        }
+
+        public IEnumerable<Pie> AllPies
+        {
+            get
+            {
+                return _bethanysPieShopDbContext.Pies.Include(c => c.Category);
+            }
+        }
+
+        public IEnumerable<Pie> PiesOfTheWeek
+        {
+            get
+            {
+                return _bethanysPieShopDbContext.Pies.Include(c => c.IsPieOfTheWeek == true);
+            }
+        }
+
+        public Pie? GetPieById(int pieId)
+        {
+            throw new NotImplementedException();
         }
     }
 }
