@@ -24,13 +24,16 @@ namespace Simple_Eshop.Models
         {
             get
             {
-                return _bethanysPieShopDbContext.Pies.Include(c => c.IsPieOfTheWeek == true);
+                return _bethanysPieShopDbContext.Pies.Include(c=> c.Category).Where(c => c.IsPieOfTheWeek == true);
             }
         }
 
         public Pie? GetPieById(int pieId)
         {
-            throw new NotImplementedException();
+            get
+            {
+                return _bethanysPieShopDbContext.Pies.FirstOrDefault(p => p.PieId == pieId);
+            }
         }
     }
 }
