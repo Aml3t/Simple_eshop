@@ -22,6 +22,11 @@ namespace Simple_Eshop.Controllers
             return View(piesListViewModel);
         }
 
+        public IActionResult Details(int id)
+        {
+
+        }
+
 
     }
 }
