@@ -14,9 +14,9 @@ namespace Simple_Eshop.Controllers
 
         public IActionResult Index()
         {
-            //PieListViewModel piesListViewModel = new PieListViewModel
-            //    (_pieRepository.AllPies, "Cheese cakes");
-            //return View(piesListViewModel);
+            var piesOfTheWeek = _pieRepository.PiesOfTheWeek;
+            var homeViewModel = new HomeViewModel(piesOfTheWeek);
+            return View(homeViewModel);
         }
 
     }

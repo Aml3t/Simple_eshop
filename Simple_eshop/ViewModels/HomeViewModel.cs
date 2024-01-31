@@ -4,6 +4,11 @@ namespace Simple_Eshop.ViewModels
 {
     public class HomeViewModel
     {
-        public IEnumerable<Pie> Pies { get; }
+        public IEnumerable<Pie> PiesOfTheWeek { get; }
+
+        public HomeViewModel(IEnumerable<Pie> piesOfTheWeek)
+        {
+            PiesOfTheWeek = piesOfTheWeek;
+        }
     }
 }
