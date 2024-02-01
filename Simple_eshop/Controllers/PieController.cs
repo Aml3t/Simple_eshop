@@ -18,7 +18,7 @@ namespace Simple_Eshop.Controllers
         public IActionResult List()
         {
             PieListViewModel piesListViewModel = new PieListViewModel
-                (_pieRepository.AllPies, "Cheese cakes");
+                (_pieRepository.AllPies, "All Pies");
             return View(piesListViewModel);
         }
 
