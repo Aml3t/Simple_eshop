@@ -7,5 +7,11 @@ namespace Simple_Eshop.Controllers
     {
         private readonly IPieRepository _pieRepository;
         private readonly IShoppingCart _shoppingCart;
+
+        public ShoppingCartController(IPieRepository pieRepository, IShoppingCart shoppingCart)
+        {
+            _pieRepository = pieRepository;
+            _shoppingCart = shoppingCart;
+        }
     }
 }
