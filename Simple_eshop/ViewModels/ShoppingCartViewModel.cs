@@ -6,6 +6,7 @@ namespace Simple_Eshop.ViewModels
     {
         public IShoppingCart ShoppingCart { get; set; }
         public decimal ShoppingCartTotal { get; set; }
+
         public ShoppingCartViewModel(IShoppingCart shoppingCart, decimal shoppingCartTotal)
         {
             ShoppingCart = shoppingCart;
