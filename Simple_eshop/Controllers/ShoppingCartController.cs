@@ -13,5 +13,11 @@ namespace Simple_Eshop.Controllers
             _pieRepository = pieRepository;
             _shoppingCart = shoppingCart;
         }
+
+        public ViewResult Index()
+        {
+            var items = _shoppingCart.GetShoppingCartItems();
+
+        }
     }
 }
