@@ -22,7 +22,6 @@ namespace Simple_Eshop.Components
                 _shoppingCart.GetShoppingCartTotal());
 
             return View(shoppingCartViewModel);
-
         }
             
 
