@@ -23,9 +23,25 @@ namespace Simple_Eshop.Controllers
         //    return View(piesListViewModel);
         //}
 
-        public IActionResult List(string category)
+        public ViewResult List(string category)
         {
+            IEnumerable<Pie> pies;
+            string? currentCategory;
 
+            if (string.IsNullOrEmpty(category))
+            {
+                pies = _pieRepository.AllPies.OrderBy(p => p.Name);
+                currentCategory = "All Pies";
+            }
+            else
+            {
+                pies = _pieRepository.AllPies.Where(p => p.Category.CategoryName == category)
+                    .OrderBy(p => p.PieId);
+                currentCategory = _categoryRepository.AllCategories.FirstOrDefault(
+                    c => c.CategoryName == category)?.CategoryName;
+            }
+            
+            return View(new PieListViewModel(pies, category));
         }
 
         public IActionResult Details(int id)
