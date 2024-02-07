@@ -1,6 +1,4 @@
-﻿using BethanysPieShop.Models;
-using BethanysPieShop.ViewModels;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Simple_Eshop.Models;
 using Simple_Eshop.ViewModels;
 
