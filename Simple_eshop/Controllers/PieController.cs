@@ -15,11 +15,17 @@ namespace Simple_Eshop.Controllers
             _categoryRepository = categoryRepository;
         }
 
-        public IActionResult List()
+        ///Generic List method
+        //public IActionResult List()
+        //{
+        //    PieListViewModel piesListViewModel = new PieListViewModel
+        //        (_pieRepository.AllPies, "All Pies");
+        //    return View(piesListViewModel);
+        //}
+
+        public IActionResult List(string category)
         {
-            PieListViewModel piesListViewModel = new PieListViewModel
-                (_pieRepository.AllPies, "All Pies");
-            return View(piesListViewModel);
+
         }
 
         public IActionResult Details(int id)
