@@ -13,7 +13,8 @@
         public void CreateOrder(Order order)
         {
             order.OrderPlaced = DateTime.Now;
-            List<ShoppingCartItem> shoppingCartItems = _shoppingCart.GetShoppingCartItems();
+            List<ShoppingCartItem> shoppingCartItems = _shoppingCart.ShoppingCartItems;
+            order.OrderTotal = _shoppingCart.GetShoppingCartTotal();
 
             order.OrderDetails = new List<OrderDetail>();
 
@@ -30,6 +31,10 @@
 
                 order.OrderDetails.Add(orderDetails);
             }
+
+            _bethanysPieShopDbContext.Orders.Add(order);
+
+            _bethanysPieShopDbContext.SaveChanges();
 
 
         }
