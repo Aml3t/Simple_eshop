@@ -6,10 +6,10 @@ namespace BethanysPieShop.Controllers
 {
     public class ShoppingCartController : Controller
     {
-        private readonly IPieRepository _pieRepository;
+        private readonly IOrderRepository _pieRepository;
         private readonly IShoppingCart _shoppingCart;
 
-        public ShoppingCartController(IPieRepository pieRepository, IShoppingCart shoppingCart)
+        public ShoppingCartController(IOrderRepository pieRepository, IShoppingCart shoppingCart)
         {
             _pieRepository = pieRepository;
             _shoppingCart = shoppingCart;

@@ -3,7 +3,7 @@ using Simple_Eshop.Models;
 
 namespace Simple_Eshop.Models
 {
-    public class MockPieRepository : IPieRepository
+    public class MockPieRepository : IOrderRepository
     {
         private readonly ICategoryRepository _categoryRepository = new MockCategoryRepository();
 
