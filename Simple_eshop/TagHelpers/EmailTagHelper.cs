@@ -13,7 +13,6 @@ namespace Simple_Eshop.TagHelpers
 
             output.Attributes.SetAttribute("href", "mailto:" + Address);
             output.Content.SetContent(Content);
-
         }
     }
 }
