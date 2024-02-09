@@ -13,5 +13,10 @@ namespace Simple_Eshop.Controllers
             _orderRepository = pieRepository;
             _shoppingCart = shoppingCart;
         }
+
+        public IActionResult CheckOut()
+        {
+            return View();
+        }
     }
 }
