@@ -6,10 +6,10 @@ namespace Simple_Eshop.Controllers
 {
     public class PieController : Controller
     {
-        private readonly IOrderRepository _pieRepository;
+        private readonly IPieRepository _pieRepository;
         private readonly ICategoryRepository _categoryRepository;
 
-        public PieController(IOrderRepository pieRepository, ICategoryRepository categoryRepository)
+        public PieController(IPieRepository pieRepository, ICategoryRepository categoryRepository)
         {
             _pieRepository = pieRepository;
             _categoryRepository = categoryRepository;

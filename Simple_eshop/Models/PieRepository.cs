@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Simple_Eshop.Models
 {
-    public class PieRepository : IOrderRepository
+    public class PieRepository : IPieRepository
     {
         private readonly BethanysPieShopDbContext _bethanysPieShopDbContext;
 

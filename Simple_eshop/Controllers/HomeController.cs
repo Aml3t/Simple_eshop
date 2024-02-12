@@ -6,8 +6,8 @@ namespace Simple_Eshop.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IOrderRepository _pieRepository;
-        public HomeController(IOrderRepository pieRepository)
+        private readonly IPieRepository _pieRepository;
+        public HomeController(IPieRepository pieRepository)
         {
             _pieRepository = pieRepository;
         }

@@ -1,6 +1,6 @@
 ﻿namespace Simple_Eshop.Models
 {
-    public interface IOrderRepository
+    public interface IPieRepository
     {
         IEnumerable<Pie> AllPies { get; }
         IEnumerable<Pie> PiesOfTheWeek { get; }

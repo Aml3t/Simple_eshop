@@ -8,9 +8,9 @@ namespace Simple_Eshop.Controllers
         private readonly IOrderRepository _orderRepository;
         private readonly IShoppingCart _shoppingCart;
 
-        public OrderController(IOrderRepository pieRepository, IShoppingCart shoppingCart)
+        public OrderController(IOrderRepository orderRepository, IShoppingCart shoppingCart)
         {
-            _orderRepository = pieRepository;
+            _orderRepository = orderRepository;
             _shoppingCart = shoppingCart;
         }
 
