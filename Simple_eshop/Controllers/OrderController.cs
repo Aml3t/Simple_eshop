@@ -42,6 +42,7 @@ namespace Simple_Eshop.Controllers
 
         public IActionResult CheckoutComplete()
         {
+            ViewBag.CheckoutCompleteMessage = "Thanks for your order. You will soon enjoy our delicious pies!";
             return View();
         }
     }
