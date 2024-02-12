@@ -35,9 +35,14 @@ namespace Simple_Eshop.Controllers
             {
                 _orderRepository.CreateOrder(order);
                 _shoppingCart.ClearCart();
-                return RedirectToAction("Checkoutcomplete");
+                return RedirectToAction("CheckoutComplete");
             }
+            return View(order);
+        }
 
+        public IActionResult CheckoutComplete()
+        {
+            return View();
         }
     }
 }
