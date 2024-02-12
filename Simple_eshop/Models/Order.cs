@@ -11,12 +11,26 @@ namespace Simple_Eshop.Models
         public List<OrderDetail>? OrderDetails { get; set; }
 
         [Required(ErrorMessage = "Please enter your first name")]
-        [Display(Name = "First Name")]
+        [Display(Name = "First name")]
         [StringLength(50)]
         public string FirstName { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "Please enter your last name")]
+        [Display(Name = "Last name")]
+        [StringLength(50)]
         public string LastName { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "Please enter your address")]
+        [StringLength(100)]
+        [Display(Name = "Address Line 1")]
         public string AddressLine1 { get; set; } = string.Empty;
+
+        [Display(Name = "Address Line 2")]
         public string? AddressLine2 { get; set; }
+
+        [Required(ErrorMessage = "Please enter your zip code")]
+        [Display(Name = "Zip code")]
+        [StringLength(10, MinimumLength = 4)]
         public string ZipCode { get; set; } = string.Empty;
         public string City { get; set; } = string.Empty;
         public string? State { get; set; }
