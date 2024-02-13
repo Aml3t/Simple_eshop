@@ -23,10 +23,18 @@ namespace Simple_Eshop.Controllers
         //    return View(piesListViewModel);
         //}
 
-        public ViewResult List(string category)
+        // Changed from ViewList to IActionResult to implement a basic
+        // security principle to evade XSS 
+        public IActionResult List(string category)
         {
             IEnumerable<Pie> pies;
             string? currentCategory;
+
+            // Newly added counter method
+            if (!IsValidCategory(category))
+            {
+                return RedirectToAction("Index", "Home");
+            }
 
             if (string.IsNullOrEmpty(category))
             {
@@ -56,6 +64,12 @@ namespace Simple_Eshop.Controllers
             return View(pie);
         }
 
+
+        // Newly added counter method
+        private bool IsValidCategory(string category)
+        {
+            return _categoryRepository.AllCategories.Any(c => c.CategoryName == category);
+        }
 
     }
 }

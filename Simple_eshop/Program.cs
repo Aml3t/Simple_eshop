@@ -16,6 +16,7 @@ builder.Services.AddScoped<IShoppingCart, ShoppingCart>(sp => ShoppingCart.GetCa
 builder.Services.AddSession();
 builder.Services.AddHttpContextAccessor();
 
+builder.Services.AddRazorPages();
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<BethanysPieShopDbContext>(options =>
 {
@@ -27,6 +28,7 @@ var app = builder.Build();
 
 app.UseStaticFiles();
 app.UseSession();
+app.MapRazorPages();
 
 if (app.Environment.IsDevelopment())
 {
