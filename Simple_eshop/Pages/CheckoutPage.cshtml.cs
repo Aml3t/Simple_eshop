@@ -22,9 +22,22 @@ namespace Simple_Eshop.Pages
         {
         }
 
-        public IActionResult OnPost()
+        public IActionResult OnPost(Order order)
         {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
 
+            var items = _shoppingCart.GetShoppingCartItems();
+            _shoppingCart.ShoppingCartItems = items;
+
+            if (_shoppingCart.ShoppingCartItems.Count == 0)
+            {
+                return
+            }
+
+            return Page();
         }
     }
 }
