@@ -34,7 +34,14 @@ namespace Simple_Eshop.Pages
 
             if (_shoppingCart.ShoppingCartItems.Count == 0)
             {
-                return
+                ModelState.AddModelError("", "Your cart is empty, add some pies first");
+            }
+
+            if (ModelState.IsValid)
+            {
+                _orderRepository.CreateOrder(order);
+                _shoppingCart.ClearCart();
+                return RedirectToPage("CheckOutCompletePage");
             }
 
             return Page();
