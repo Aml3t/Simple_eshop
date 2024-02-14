@@ -7,6 +7,7 @@ namespace Simple_Eshop.Pages
     {
         public void OnGet()
         {
+            ViewData["CheckoutCompleteMessage"] = "Thanks for your order. You'll soon enjoy our delicious pies!";
         }
     }
 }
