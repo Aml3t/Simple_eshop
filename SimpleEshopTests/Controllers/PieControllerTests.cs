@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace SimpleEshopTests.Controllers
 {
-    internal class PieControllerTests
+    public class PieControllerTests
     {
+        [Fact]
+        public void List_EmptyCategory_ReturnsAllPies()
+        {
+
+        }
     }
 }
