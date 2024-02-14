@@ -10,5 +10,10 @@ namespace Simple_Eshop.Pages
         public void OnGet()
         {
         }
+
+        public IActionResult OnPost()
+        {
+
+        }
     }
 }
