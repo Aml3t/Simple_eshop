@@ -6,7 +6,18 @@ namespace Simple_Eshop.Pages
 {
     public class CheckoutPageModel : PageModel
     {
+
+        private readonly IOrderRepository _orderRepository;
+        private readonly IShoppingCart _shoppingCart;
+
+        public CheckoutPageModel(IOrderRepository orderRepository, IShoppingCart shoppingCart)
+        {
+            _orderRepository = orderRepository;
+            _shoppingCart = shoppingCart;
+        }
+
         public Order Order { get; set; }
+
         public void OnGet()
         {
         }
