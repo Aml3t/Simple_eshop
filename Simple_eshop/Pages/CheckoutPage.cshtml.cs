@@ -16,6 +16,7 @@ namespace Simple_Eshop.Pages
             _shoppingCart = shoppingCart;
         }
 
+        [BindProperty]
         public Order Order { get; set; }
 
         public void OnGet()
