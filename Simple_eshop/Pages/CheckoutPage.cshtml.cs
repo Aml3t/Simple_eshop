@@ -43,7 +43,6 @@ namespace Simple_Eshop.Pages
                 _shoppingCart.ClearCart();
                 return RedirectToPage("CheckOutCompletePage");
             }
-
             return Page();
         }
     }
