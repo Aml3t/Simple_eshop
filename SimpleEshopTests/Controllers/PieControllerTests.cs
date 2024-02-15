@@ -28,6 +28,7 @@ namespace SimpleEshopTests.Controllers
             var viewResult = Assert.IsType<ViewResult>(result);
             var pieListViewModel = Assert.IsAssignableFrom<PieListViewModel>
                 (viewResult.ViewData.Model);
+            Assert.Equal(10, pieListViewModel.Pies.Count());
 
         }
     }
