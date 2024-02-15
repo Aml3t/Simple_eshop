@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SimpleEshopTests.Mocks;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,14 @@ namespace SimpleEshopTests.Controllers
         [Fact]
         public void List_EmptyCategory_ReturnsAllPies()
         {
+            // Arrange
+            var mockPieRepository = RepositoryMocks.GetPieRepository();
+            var mockCategoryRepository = RepositoryMocks.GetCategoryRepository();
+
+            // Act
+
+
+            // Assert
 
         }
     }
