@@ -18,7 +18,7 @@ namespace SimpleEshopTests.TagHelpers
             //Arrange
             EmailTagHelper emailTagHelper = new EmailTagHelper()
             {
-                Address = "test@test.com",
+                Address = "test@bethanyspieshop.com",
                 Content = "Email"
             };
 
