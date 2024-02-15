@@ -1,4 +1,7 @@
-﻿using SimpleEshopTests.Mocks;
+﻿using Microsoft.AspNetCore.Mvc;
+using Simple_Eshop.Controllers;
+using Simple_Eshop.ViewModels;
+using SimpleEshopTests.Mocks;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,10 +19,15 @@ namespace SimpleEshopTests.Controllers
             var mockPieRepository = RepositoryMocks.GetPieRepository();
             var mockCategoryRepository = RepositoryMocks.GetCategoryRepository();
 
-            // Act
+            var pieController = new PieController(mockPieRepository.Object, mockCategoryRepository.Object);
 
+            // Act
+            var result = pieController.List("");
 
             // Assert
+            var viewResult = Assert.IsType<ViewResult>(result);
+            var pieListViewModel = Assert.IsAssignableFrom<PieListViewModel>
+                (viewResult.ViewData.Model);
 
         }
     }
