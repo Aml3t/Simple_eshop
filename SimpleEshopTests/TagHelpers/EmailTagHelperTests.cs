@@ -33,7 +33,6 @@ namespace SimpleEshopTests.TagHelpers
                 (cache, encoder) => Task.FromResult(content.Object));
 
             //Act
-
             emailTagHelper.Process(tagHelperContext, tagHelperOutput);
 
             //Assert
