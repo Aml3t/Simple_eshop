@@ -23,18 +23,18 @@ namespace Simple_Eshop.Controllers
         //    return View(piesListViewModel);
         //}
 
-        // Changed from ViewList to IActionResult to implement a basic
+        // Changed from ViewResult to IActionResult to implement a basic
         // security principle to evade XSS 
         public IActionResult List(string category)
         {
             IEnumerable<Pie> pies;
             string? currentCategory;
 
-            // Newly added counter method
-            if (!IsValidCategory(category))
-            {
-                return RedirectToAction("Index", "Home");
-            }
+            //// Newly added counter method
+            //if (!IsValidCategory(category))
+            //{
+            //    return RedirectToAction("Index", "Home");
+            //}
 
             if (string.IsNullOrEmpty(category))
             {
@@ -49,7 +49,7 @@ namespace Simple_Eshop.Controllers
                     c => c.CategoryName == category)?.CategoryName;
             }
             
-            return View(new PieListViewModel(pies, category));
+            return View(new PieListViewModel(pies, currentCategory));
         }
 
         public IActionResult Details(int id)
