@@ -15,16 +15,16 @@ namespace SimpleEshopTests.Controllers
         [Fact]
         public void List_EmptyCategory_ReturnsAllPies()
         {
-            // Arrange
+            //Arrange
             var mockPieRepository = RepositoryMocks.GetPieRepository();
             var mockCategoryRepository = RepositoryMocks.GetCategoryRepository();
 
             var pieController = new PieController(mockPieRepository.Object, mockCategoryRepository.Object);
 
-            // Act
+            //Act
             var result = pieController.List("");
 
-            // Assert
+            //Assert
             var viewResult = Assert.IsType<ViewResult>(result);
             var pieListViewModel = Assert.IsAssignableFrom<PieListViewModel>
                 (viewResult.ViewData.Model);
