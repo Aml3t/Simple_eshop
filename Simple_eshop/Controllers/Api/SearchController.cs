@@ -14,5 +14,12 @@ namespace Simple_Eshop.Controllers.Api
         {
             _pieRepository = pieRepository;
         }
+
+        public IActionResult GetAll()
+        {
+            var items = _pieRepository.AllPies.ToList();
+            return (items);
+        }
+        
     }
 }
