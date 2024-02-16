@@ -33,7 +33,16 @@ namespace Simple_Eshop.Controllers.Api
         }
 
         [HttpPost]
-        public IActionResult SearchPies([FromBody] string searc)
+        public IActionResult SearchPies([FromBody] string searchQuery)
+        {
+            IEnumerable<Pie> pies = new List<Pie>();
+
+            if (!string.IsNullOrEmpty(searchQuery))
+            {
+                pies = _pieRepository.SearchPies(searchQuery);
+            }
+            return new JsonResult(pies);
+        }
 
     }
 }

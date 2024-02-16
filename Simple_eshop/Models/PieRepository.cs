@@ -36,7 +36,7 @@ namespace Simple_Eshop.Models
         public IEnumerable<Pie> SearchPies(string searchQuery)
         {
             return _bethanysPieShopDbContext.Pies
-                .Where(p => p.Name.Contains(searchQuery) || p.ShortDescription.Contains(searchQuery));
+                .Where(p => p.Name.Contains(searchQuery));
         }
     }
 }
