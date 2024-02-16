@@ -32,5 +32,11 @@ namespace Simple_Eshop.Models
         {
             return _bethanysPieShopDbContext.Pies.FirstOrDefault(p => p.PieId == pieId);
         }
+
+        public IEnumerable<Pie> SearchPies(string searchQuery)
+        {
+            return _bethanysPieShopDbContext.Pies
+                .Where(p => p.Name.Contains(searchQuery) || p.ShortDescription.Contains(searchQuery));
+        }
     }
 }
