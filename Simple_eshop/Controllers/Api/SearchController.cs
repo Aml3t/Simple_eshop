@@ -32,5 +32,8 @@ namespace Simple_Eshop.Controllers.Api
             return Ok(_pieRepository.AllPies.Where(p => p.PieId == id));
         }
 
+        [HttpPost]
+        public IActionResult SearchPies([FromBody] string searc)
+
     }
 }
