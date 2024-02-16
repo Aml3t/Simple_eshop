@@ -18,15 +18,19 @@ namespace Simple_Eshop.Controllers.Api
         [HttpGet]
         public IActionResult GetAll()
         {
-            var items = _pieRepository.AllPies.ToList();
-            return (items);
+            var _allPies = _pieRepository.AllPies;
+            return Ok(_allPies);
         }
 
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
-            
+            if (!_pieRepository.AllPies.Any(p => p.PieId == id))
+            {
+                return NotFound();
+            }
+            return Ok(_pieRepository.AllPies.Where(p => p.PieId == id);
         }
-        
+
     }
 }
