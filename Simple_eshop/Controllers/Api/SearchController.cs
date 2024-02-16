@@ -29,7 +29,7 @@ namespace Simple_Eshop.Controllers.Api
             {
                 return NotFound();
             }
-            return Ok(_pieRepository.AllPies.Where(p => p.PieId == id);
+            return Ok(_pieRepository.AllPies.Where(p => p.PieId == id));
         }
 
     }
