@@ -1,3 +1,4 @@
+using Simple_Eshop.App
 using Microsoft.EntityFrameworkCore;
 using Simple_Eshop.Models;
 using System.Text.Json.Serialization;
@@ -25,7 +26,8 @@ builder.Services.AddControllersWithViews()
     });
 
 builder.Services.AddRazorPages();
-builder.Services.AddServerSideBlazor();
+builder.Services.AddRazorComponents()
+    .AddInteractiveServerComponents();
 
 builder.Services.AddDbContext<BethanysPieShopDbContext>(options =>
 {
@@ -48,10 +50,12 @@ app.MapDefaultControllerRoute(); //"{controller=Home}/{action}/{id?}"
 //    name: "default",
 //    pattern: "{controller=Home}/{action=Index}/{id?}");
 
-app.MapRazorPages();
-app.MapBlazorHub();
+app.UseAntiforgery();
 
-app.MapFallbackToPage("/app/{*catchall}", "/App/Index");
+app.MapRazorPages();
+
+app.MapRazorComponents<App>()
+    .AddInteractiveServerRenderMode();
 
 
 DbInitializer.Seed(app);
