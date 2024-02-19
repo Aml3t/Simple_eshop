@@ -66,7 +66,7 @@ namespace Simple_Eshop.Controllers
 
         public IActionResult Search()
         {
-
+            return View();
         }
 
 
