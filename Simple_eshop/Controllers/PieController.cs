@@ -64,6 +64,12 @@ namespace Simple_Eshop.Controllers
             return View(pie);
         }
 
+        public IActionResult Search()
+        {
+
+        }
+
+
 
         // Newly added counter method
         private bool IsValidCategory(string category)
