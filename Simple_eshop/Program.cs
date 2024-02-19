@@ -25,6 +25,8 @@ builder.Services.AddControllersWithViews()
     });
 
 builder.Services.AddRazorPages();
+builder.Services.AddServerSideBlazor();
+
 builder.Services.AddDbContext<BethanysPieShopDbContext>(options =>
 {
     options.UseSqlServer(
@@ -33,13 +35,13 @@ builder.Services.AddDbContext<BethanysPieShopDbContext>(options =>
 
 var app = builder.Build();
 
-app.UseStaticFiles();
-app.UseSession();
-
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
 }
+
+app.UseStaticFiles();
+app.UseSession();
 
 app.MapDefaultControllerRoute(); //"{controller=Home}/{action}/{id?}"
 //app.MapControllerRoute(
@@ -47,6 +49,10 @@ app.MapDefaultControllerRoute(); //"{controller=Home}/{action}/{id?}"
 //    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.MapRazorPages();
+app.MapBlazorHub();
+
+app.MapFallbackToPage("/app/{*catchall}", "/App/Index");
+
 
 DbInitializer.Seed(app);
 
