@@ -43,6 +43,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseStaticFiles();
 app.UseSession();
+app.UseAuthentication();
 
 app.MapDefaultControllerRoute(); //"{controller=Home}/{action}/{id?}"
 //app.MapControllerRoute(
