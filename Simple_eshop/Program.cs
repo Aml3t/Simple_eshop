@@ -1,4 +1,3 @@
-using Simple_Eshop.App
 using Microsoft.EntityFrameworkCore;
 using Simple_Eshop.Models;
 using System.Text.Json.Serialization;
@@ -54,8 +53,8 @@ app.UseAntiforgery();
 
 app.MapRazorPages();
 
-app.MapRazorComponents<App>()
-    .AddInteractiveServerRenderMode();
+//app.MapRazorComponents<App>()
+//    .AddInteractiveServerRenderMode();
 
 
 DbInitializer.Seed(app);
