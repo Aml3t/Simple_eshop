@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Simple_Eshop.Models;
 
 namespace Simple_Eshop.Controllers
 {
+    [Authorize]
     public class OrderController : Controller
     {
         private readonly IOrderRepository _orderRepository;
@@ -15,7 +17,7 @@ namespace Simple_Eshop.Controllers
             _shoppingCart = shoppingCart;
         }
 
-        public IActionResult CheckOut()
+        public IActionResult CheckOut()//GET
         {
             return View();
         }
