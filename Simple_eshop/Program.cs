@@ -38,8 +38,7 @@ builder.Services.AddDbContext<BethanysPieShopDbContext>(options =>
         builder.Configuration["ConnectionStrings:BethanysPieShopDbContextConnection"]);
 });
 
-builder.Services.AddDefaultIdentity<IdentityUser>
-    (options => options.SignIn.RequireConfirmedAccount = true)
+builder.Services.AddDefaultIdentity<IdentityUser>()
     .AddEntityFrameworkStores<BethanysPieShopDbContext>();
 
 var app = builder.Build();
